@@ -107,7 +107,7 @@ button2.place(x = 290, y = 110)
 button3 = Button(command=q4,text="4",padx=mypadx,pady=mypady,font=("arial",18),bg=color)
 button3.place(x = 50,y = 220)
 
-button4 = Button(command=q5,text="5",padx=mypadx,pady=mypady,font=("arial",18),bg=color)
+button4 = Button(command=lambda:q(5),text="5",padx=mypadx,pady=mypady,font=("arial",18),bg=color)
 button4.place(x = 170,y = 220)
 
 button5 = Button(command=q6,text="6",padx=mypadx,pady=mypady,font=("arial",18),bg=color)
