@@ -1,17 +1,31 @@
-a = "ім'я:Олександр,вік:16,стать:чоловіча"
-b = "ім'я:Владислав,вік:46,стать:чоловіча"
-
-c = {'name':"ОлексAндр",
-     "age":16,
-     'sx': "Чоловіча"}
-c['name'] = "Олексій"
-c['age'] = 19
-# print("Мене звати", c['name'], ", мені", c['age'],"років")
+# a = "ім'я:Олександр,вік:16,стать:чоловіча"
+# b = "ім'я:Владислав,вік:46,стать:чоловіча"
 #
-# print(f"Мене звати {c['name']}, мені {c['age']*2} років")
+# c = {'name':"ОлексAндр",
+#      "age":16,
+#      'sx': "Чоловіча"}
+# c['name'] = "Олексій"
+# c['age'] = 19
+# # print("Мене звати", c['name'], ", мені", c['age'],"років")
+# #
+# # print(f"Мене звати {c['name']}, мені {c['age']*2} років")
+#
+# c['country'] = "Ukraine"
+# c['age'] = None
+# print(c)
+# print(c.get('age',"key doesnt exisist"))
 
-c['country'] = "Ukraine"
-c['age'] = None
-print(c)
-print(c.get('age',"key doesnt exisist"))
+
+def name(x):
+     return x**2
+
+g = lambda x:name(x)
+print(g(43))
+
+
+
+
+
+
+
 

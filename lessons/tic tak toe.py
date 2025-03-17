@@ -1,6 +1,8 @@
 import tkinter.messagebox
 from tkinter import *
 
+from PIL import Image, ImageTk
+
 app = Tk()
 app.geometry('700x700')
 
@@ -25,11 +27,16 @@ def begin(event):
     nul = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     occ = []
     xon = 1
+
 def click(button,num):
     global occ,nul,xon
     if not num in occ:
         if xon == 1:
             button["bg"] = "#c10808"
+            image = Image.open("cross.png")
+            image = image.resize((button.winfo_width(), button.winfo_height()))
+            photo = ImageTk.PhotoImage(image)
+            button.config(image=photo, text="", compound="center")
             nul[num] = xon
             xon = 2
         elif xon == 2:
