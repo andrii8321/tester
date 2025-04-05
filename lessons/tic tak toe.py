@@ -3,6 +3,8 @@ from tkinter import *
 
 from PIL import Image, ImageTk
 
+images = {}
+
 app = Tk()
 app.geometry('700x700')
 
@@ -15,6 +17,7 @@ def begin(event):
     global nul
     global occ
     global xon
+    global images
     button["bg"] = color
     button1["bg"] = color
     button2["bg"] = color
@@ -27,25 +30,30 @@ def begin(event):
     nul = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     occ = []
     xon = 1
+    images={}
 
 def click(button,num):
-    global occ,nul,xon
+    global occ,nul,xon, images
     if not num in occ:
+        print(images)
         if xon == 1:
+
             button["bg"] = "#c10808"
             image = Image.open("cross.png")
-            image = image.resize((button.winfo_width(), button.winfo_height()))
-            photo = ImageTk.PhotoImage(image)
-            button.config(image=photo, text="", compound="center")
+
             nul[num] = xon
             xon = 2
         elif xon == 2:
             button["bg"] = "#00ffbd"
             nul[num] = xon
+            image = Image.open("cross.png")
             xon = 1
+        image = image.resize((button.winfo_width(), button.winfo_height()))
+        photo = ImageTk.PhotoImage(image)
+        button.config(image=photo, text="", compound="center")
+        images[num]=photo
+        winner()
     occ.append(num)
-
-    winner()
 
 
 

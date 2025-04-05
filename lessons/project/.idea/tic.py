@@ -1,17 +1,7 @@
-import tkinter as tk
-from PIL import Image, ImageTk
-def change_bg():
-    global photo
-    image = Image.open("cross.png")
-    image = image.resize((button.winfo_width(), button.winfo_height()))
-    photo = ImageTk.PhotoImage(image)
-    button.config(image=photo, text="", compound="center")
+answer = [["Європа", "Азія", "Африка", "Австралія"], ["На землі", "На сонці", "На небі", "У воді"],
+          ["Гривні", "Льє", "Долари", "Ліри"], ["Самоскит", "Самописка", "Зеркальник", "Автопортрет"],
+          ["Дрон", "Махаон", "Десептикон", "Аніон"], ["Баскетбол", "Теніс", "Бейсбол", "Керлінг"],
+          ["Празький", "Дарницький", "Невський", "Славутицький"], ["Жан-Клод Вандам", "Клод Моне", "Усейн Болт", "Едгар По"],
+          ["Бартоломео Діаш", "Джон Брюс", "Васка Дагама", "Христофор Колумб"]]
 
-
-root = tk.Tk()
-root.title("Смена фона кнопки")
-
-button = tk.Button(root, text="Нажми меня", command=change_bg)
-button.pack(pady=20, padx=20)
-
-root.mainloop()
+print(answer[2][2])
