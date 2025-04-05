@@ -22,6 +22,31 @@ shrift = ('arial',25)
 counter = 16
 after_d = None
 i = 0
+
+
+
+questions = {0:{"name":"Який континент складається лише з однієї країни?!",
+                  "answers":["Європа", "Азія", "Африка", "Австралія"],"correct_answer":4},
+             1:{"name":"Де ростуть соняшники?",
+                "answers":["На землі", "На сонці", "На небі", "У воді"],"correct_answer":1},
+             2:{"name":"Яких грошей не буває?",
+                "answers":["Гривні", "Льє", "Долари", "Ліри"],"correct_answer":2},
+             3:{"name":"Як називається портрет, який написаний з самого себе?",
+                "answers":["Самоскит", "Самописка", "Зеркальник", "Автопортрет"],"correct_answer":4},
+             4:{"name":"Як називають безпілотний літальний апарат?",
+                "answers":["Дрон", "Махаон", "Десептикон", "Аніон"],"correct_answer":1},
+             5:{"name":"В якій грі не використовують м’яч?",
+                "answers":["Баскетбол", "Теніс", "Бейсбол", "Керлінг"],"correct_answer":4},
+             6:{"name":"Який з цих мостів знаходиться в Києві?",
+                "answers":["Празький", "Дарницький", "Невський", "Славутицький"],"correct_answer":2},
+             7:{"name":"Хто з цих людей є письменником?",
+                "answers":["Жан-Клод Вандам", "Клод Моне", "Усейн Болт", "Едгар По"],"correct_answer":4},
+             8:{"name":"Хто з цих мореплавців відкрив Мис Доброї Надії?",
+                "answers":["Бартоломео Діаш", "Джон Брюс", "Васка Дагама", "Христофор Колумб"],"correct_answer":1},
+             }
+
+
+
 quest = ["Який континент складається лише з однієї країни?", "Де ростуть соняшники?",
          "Яких грошей не буває?", "Як називається портрет, який написаний з самого себе?",
          "Як називають безпілотний літальний апарат?", "В якій грі не використовують м’яч?",
@@ -55,11 +80,11 @@ def next_question(number):
     elif correct_answer[i] == number:
         i +=1
 
-        label_question["text"] = quest[i]
-        button_ans1["text"] = answer[i][0]
-        button_ans2["text"] = answer[i][1]
-        button_ans3["text"] = answer[i][2]
-        button_ans4["text"] = answer[i][3]
+        label_question["text"] = questions[i]["name"]
+        button_ans1["text"] = questions[i]["answers"][0]
+        button_ans2["text"] = questions[i]["answers"][1]
+        button_ans3["text"] = questions[i]["answers"][2]
+        button_ans4["text"] = questions[i]["answers"][3]
         label_indikator["text"] = f"питання номер:{i+1} "
         m += i*100
         label_cash["text"] = f"сума:{m}"
@@ -137,15 +162,15 @@ button_cashback = Button(command=cashout,text="забрати гроші",font=s
 button_cashback.place(x=650,y=140)
 label_indikator = Label(text=f"питання номер:{i+1} ",font=('arial',17))
 label_indikator.place(x=0,y=340)
-label_question = Label(text=quest[i],font=shrift)
+label_question = Label(text=questions[i]["name"],font=shrift)
 label_question.place(x=0,y=380)
-button_ans1 = Button(text = answer[i][0]                        ,command=lambda: next_question(number=1),font=shrift)
+button_ans1 = Button(text = questions[i]["answers"][0]                        ,command=lambda: next_question(number=1),font=shrift)
 button_ans1.place(x=50,y=440)
-button_ans2 = Button(text=answer[i][1]                        ,command=lambda:next_question(number=2),font=shrift)
+button_ans2 = Button(text=questions[i]["answers"][1]                        ,command=lambda:next_question(number=2),font=shrift)
 button_ans2.place(x=470,y=440)
-button_ans3 = Button(text=answer[i][2]                        ,command=lambda:next_question(number=3),font=shrift)
+button_ans3 = Button(text=questions[i]["answers"][2]                        ,command=lambda:next_question(number=3),font=shrift)
 button_ans3.place(x=50,y=540)
-button_ans4 = Button(text=answer[i][3]                        ,command=lambda:next_question(number=4),font=shrift)
+button_ans4 = Button(text=questions[i]["answers"][3]                        ,command=lambda:next_question(number=4),font=shrift)
 button_ans4.place(x=470,y=540)
 
 def timer():
