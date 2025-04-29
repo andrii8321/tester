@@ -193,8 +193,8 @@ else:
                     else:
                         Continue = False
                         if Continue == False:
-                                loose(n_summa)
-                            else:
+                            loose(n_summa)
+                        else:
                                 dost_podskazki(summa, pidkazka50, pidkazkaDzvonok)
                                 question9 = "Хто з цих моряків відкрив Мис Доброї надії?"
                                 question(9,question9, "Христофор Колумб", "Бартоломео Діаш", "Джон Брюс", "Васка Дагама")
